@@ -14,31 +14,59 @@ class ViewController: UIViewController {
 //        let view = UIView(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
         let view = UIView()
         view.backgroundColor = UIColor.yellow
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-//    var newView: UIView {
-//        let newView = UIView()
-//        newView.backgroundColor = UIColor.red
-//        return newView
-//    }
-
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Xcode Awesome"
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor.gray
-//        view.addSubview(mainView)
-        
+       
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupmainViewAutoLayout()
+        setupLabel()
         
-
+        guard let xx = titleLabel.text else {return}
+        print("label text ; \(String(describing: xx))")
+    }
+    
+    func setupLabel() {
+        mainView.addSubview(titleLabel)
+        
+        //label constraint
+        
+        NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: titleLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 150).isActive = true
+        NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal, toItem: mainView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: mainView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        
     }
 
     func setupmainViewAutoLayout() {
+        
+        view.addSubview(mainView)
+                
+        let heightConstraint = NSLayoutConstraint(item: mainView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        let widthConstraint = NSLayoutConstraint(item: mainView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100)
+        let horizontalConstraint = NSLayoutConstraint(item: mainView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: mainView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+        
+        animateMainViewConstraint(widthConstraint: widthConstraint)
+        
+        view.layoutIfNeeded()
        
 //        let newView = UIView()
 //        newView.backgroundColor = UIColor.red
@@ -51,24 +79,20 @@ class ViewController: UIViewController {
 //        let newViewwidthConstraint = NSLayoutConstraint(item: newView, attribute: .width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200)
 //        let newViewheightConstraint = NSLayoutConstraint(item: newView, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 300)
 //        view.addConstraints([newViewhorizontalConstraint, newViewverticalConstraint, newViewwidthConstraint, newViewheightConstraint])
-    
-//        let mainView = UIView()
-        mainView.backgroundColor = UIColor.green
-        view.addSubview(mainView)
-    
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-
-        let horizontalConstraint = NSLayoutConstraint(item: mainView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
-        let verticalConstraint = NSLayoutConstraint(item: mainView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: mainView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 300)
-        let heightConstraint = NSLayoutConstraint(item: mainView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
-
-        NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
-        
-        view.layoutIfNeeded()
 
     }
 
+    func animateMainViewConstraint(widthConstraint: NSLayoutConstraint) {
+        widthConstraint.constant = 300
+        mainView.alpha = 0
+
+        UIView.animate(withDuration: 1.0, animations: {
+            self.titleLabel.textColor = UIColor.white
+            self.mainView.alpha = 1
+            self.mainView.backgroundColor = UIColor.blue
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 
 }
 
