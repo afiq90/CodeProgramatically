@@ -93,10 +93,8 @@ class ProfileView: UIView {
         //        NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: mainView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
         
         
-        
         //profileImageView constraint
         constrain(self, profileImageView) { view, profileImageView in
-            
             profileImageView.centerX == view.centerX
             // profileImageView.centerY == view.centerY
             profileImageView.top == view.top + 40
@@ -116,7 +114,6 @@ class ProfileView: UIView {
         UIView.animate(withDuration: 2, animations: {
             self.profileImageView.alpha = 1
         }, completion: nil)
-        
         
     }
     
