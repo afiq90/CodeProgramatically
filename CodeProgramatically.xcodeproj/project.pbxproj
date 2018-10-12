@@ -11,6 +11,7 @@
 		42461787216DD3B000C5F710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42461786216DD3B000C5F710 /* ViewController.swift */; };
 		4246178C216DD3B200C5F710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4246178B216DD3B200C5F710 /* Assets.xcassets */; };
 		4246178F216DD3B200C5F710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4246178D216DD3B200C5F710 /* LaunchScreen.storyboard */; };
+		427BCB592170415100D33864 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427BCB582170415100D33864 /* ProfileView.swift */; };
 		D6A861C2B7A82D40D81BFB8C /* Pods_CodeProgramatically.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9E052FE680F59F43A98AA6 /* Pods_CodeProgramatically.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		4246178B216DD3B200C5F710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4246178E216DD3B200C5F710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42461790216DD3B200C5F710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		427BCB582170415100D33864 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4A9E052FE680F59F43A98AA6 /* Pods_CodeProgramatically.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeProgramatically.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF5987959E2E1D47961C1EE /* Pods-CodeProgramatically.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeProgramatically.debug.xcconfig"; path = "Target Support Files/Pods-CodeProgramatically/Pods-CodeProgramatically.debug.xcconfig"; sourceTree = "<group>"; };
 		CC2E97D8F41733828AE78620 /* Pods-CodeProgramatically.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeProgramatically.release.xcconfig"; path = "Target Support Files/Pods-CodeProgramatically/Pods-CodeProgramatically.release.xcconfig"; sourceTree = "<group>"; };
@@ -44,7 +46,6 @@
 				AAF5987959E2E1D47961C1EE /* Pods-CodeProgramatically.debug.xcconfig */,
 				CC2E97D8F41733828AE78620 /* Pods-CodeProgramatically.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -71,6 +72,7 @@
 			children = (
 				42461784216DD3B000C5F710 /* AppDelegate.swift */,
 				42461786216DD3B000C5F710 /* ViewController.swift */,
+				427BCB582170415100D33864 /* ProfileView.swift */,
 				4246178B216DD3B200C5F710 /* Assets.xcassets */,
 				4246178D216DD3B200C5F710 /* LaunchScreen.storyboard */,
 				42461790216DD3B200C5F710 /* Info.plist */,
@@ -159,15 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CodeProgramatically-checkManifestLockResult.txt",
 			);
@@ -181,15 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CodeProgramatically/Pods-CodeProgramatically-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 			);
@@ -206,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42461787216DD3B000C5F710 /* ViewController.swift in Sources */,
+				427BCB592170415100D33864 /* ProfileView.swift in Sources */,
 				42461785216DD3B000C5F710 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
